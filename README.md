@@ -33,7 +33,5 @@ To install the `LogMessage` utility via Unity's Package Manager, follow these st
    - Unity will resolve and download the package.
    - Once the package is downloaded, it will be available in your project, and you can start using `LogMessage` in your scripts.
 
-To start using `LogMessage`, ensure that your project's scripting define symbols include `ENABLE_LOGS` if you want to enable logging.
-
 ## License
 This utility is released under the [MIT License](LICENSE).
