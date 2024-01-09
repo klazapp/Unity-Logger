@@ -1,11 +1,35 @@
-# Unity Custom Logger Utility
+# LogMessage Utility for Unity
 
-This tool represents a solution for centralized logging management across an entire software project. It enhances the script compilation process to integrate log statements seamlessly, ensuring a consistent and standardized approach to logging. Key features include:
+## Introduction
+The `LogMessage` utility class is part of the `com.Klazapp.Utility` namespace, designed for Unity projects to simplify the logging process. It allows for an easy on/off switch to enable or disable all log messages in the app, eliminating the need to manually comment out or add log statements in each script.
 
-1. **Automated Log Integration:** The tool intelligently injects log statements at critical junctures in the codebase during the compilation phase, streamlining the logging process.
+## Features
+- Easy toggling of log messages with a single switch.
+- Methods for standard, error, and warning messages, each color-coded for clarity.
+- Conditional compilation to ensure log calls are only included in builds where logging is enabled.
 
-2. **Configurable Log Severity Levels:** It offers granular control over log verbosity, allowing developers to adjust logging levels (such as debug, info, warning, and error) globally or for specific modules, tailoring the logging output to the needs of different environments and stages of development.
+## Usage
+To use `LogMessage`, first ensure it is correctly added to your Unity project. You can then call its methods in your scripts as follows:
 
-3. **Uniform Log Formatting:** By enforcing a uniform format for all log entries, the tool guarantees consistency in logging outputs. This format can encompass various elements such as timestamps, severity indicators, and contextual data, thereby facilitating easier log analysis and troubleshooting.
+```csharp
+LogMessage.Debug("This is a debug message");
+LogMessage.DebugError("This is an error message");
+LogMessage.DebugWarning("This is a warning message");
+```
 
-Overall, this tool is designed to optimize logging practices, improve code maintainability, and enhance the monitoring capabilities within a software development environment."
+To enable logging, define `ENABLE_LOGS` in your project's compilation symbols. When `ENABLE_LOGS` is not defined, calls to `LogMessage` methods will be ignored, reducing overhead in production builds.
+
+## Installation
+1. Clone or download this repository.
+2. Copy the `LogMessage.cs` file into your Unity project, preferably in a folder reserved for utility scripts.
+3. Ensure that your project's scripting define symbols include `ENABLE_LOGS` if you want to enable logging.
+
+## Contributing
+Contributions to the `LogMessage` utility are welcome. Please feel free to fork this repository, make your changes, and submit a pull request.
+
+## License
+This utility is released under the [MIT License](LICENSE).
+
+---
+
+This structure uses Markdown syntax for GitHub, which includes `#` for headers, triple backticks ``` for code blocks, and standard list formatting. Replace `[LICENSE]` with the actual link to your license file. You can add more sections as needed, such as `Requirements`, `Version Compatibility`, `Screenshots`, and `Contact Information`.
