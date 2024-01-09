@@ -20,16 +20,20 @@ LogMessage.DebugWarning("This is a warning message");
 To enable logging, define `ENABLE_LOGS` in your project's compilation symbols. When `ENABLE_LOGS` is not defined, calls to `LogMessage` methods will be ignored, reducing overhead in production builds.
 
 ## Installation
-1. Clone or download this repository.
-2. Copy the `LogMessage.cs` file into your Unity project, preferably in a folder reserved for utility scripts.
-3. Ensure that your project's scripting define symbols include `ENABLE_LOGS` if you want to enable logging.
+To install the `LogMessage` utility via Unity's Package Manager, follow these steps:
 
-## Contributing
-Contributions to the `LogMessage` utility are welcome. Please feel free to fork this repository, make your changes, and submit a pull request.
+1. **Open the Unity Package Manager**:
+   - In Unity, go to `Window` > `Package Manager`.
+
+2. **Add Package from Git URL**:
+   - In the Package Manager, click the `+` icon at the top left corner and select `Add package from git URL...`.
+   - Enter the Git URL for this repository. It usually looks like `https://github.com/klazapp/Unity-Logger.git`.
+
+3. **Import into Your Project**:
+   - Unity will resolve and download the package.
+   - Once the package is downloaded, it will be available in your project, and you can start using `LogMessage` in your scripts.
+
+To start using `LogMessage`, ensure that your project's scripting define symbols include `ENABLE_LOGS` if you want to enable logging.
 
 ## License
 This utility is released under the [MIT License](LICENSE).
-
----
-
-This structure uses Markdown syntax for GitHub, which includes `#` for headers, triple backticks ``` for code blocks, and standard list formatting. Replace `[LICENSE]` with the actual link to your license file. You can add more sections as needed, such as `Requirements`, `Version Compatibility`, `Screenshots`, and `Contact Information`.
