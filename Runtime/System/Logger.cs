@@ -9,7 +9,7 @@ namespace com.Klazapp.Utility
     public static class LogMessage 
     {
         [SuppressMessage("ReSharper", "Unity.PerformanceCriticalCodeInvocation")]
-        [Conditional("ENABLE_LOGS")]
+        [Conditional("KLAZAPP_ENABLE_LOGS")]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Debug(string message)
         {
@@ -18,7 +18,7 @@ namespace com.Klazapp.Utility
         }
         
         [SuppressMessage("ReSharper", "Unity.PerformanceCriticalCodeInvocation")]
-        [Conditional("ENABLE_LOGS")]
+        [Conditional("KLAZAPP_ENABLE_LOGS")]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void DebugError(string message)
         {
@@ -29,7 +29,7 @@ namespace com.Klazapp.Utility
         }
         
         [SuppressMessage("ReSharper", "Unity.PerformanceCriticalCodeInvocation")]
-        [Conditional("ENABLE_LOGS")]
+        [Conditional("KLAZAPP_ENABLE_LOGS")]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void DebugWarning(string message)
         {
