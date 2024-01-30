@@ -11,19 +11,34 @@ namespace com.Klazapp.Utility
         [SuppressMessage("ReSharper", "Unity.PerformanceCriticalCodeInvocation")]
         [Conditional("KLAZAPP_ENABLE_LOGS")]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void Debug(string message)
+        public static void Debug(string message, [CallerMemberName] string memberName = "", [CallerFilePath] string filePath = "", [CallerLineNumber] int lineNumber = 0)
         {
+            //Get class name
+            var className = System.IO.Path.GetFileNameWithoutExtension(filePath);
+
+            //Construct message
+            message = $"<color={"#82f3ff"}>{className}.{memberName} (Line {lineNumber}): {message}</color>";
+
+            //Display message
             //ReSharper disable once Unity.PerformanceCriticalCodeInvocation
-            UnityEngine.Debug.Log("<color=#82f3ff>" + message + "</color>");
+            UnityEngine.Debug.Log(message);
         }
         
         [SuppressMessage("ReSharper", "Unity.PerformanceCriticalCodeInvocation")]
         [Conditional("KLAZAPP_ENABLE_LOGS")]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void DebugError(string message)
+        public static void DebugError(string message, [CallerMemberName] string memberName = "", [CallerFilePath] string filePath = "", [CallerLineNumber] int lineNumber = 0)
         {
+            //Get class name
+            var className = System.IO.Path.GetFileNameWithoutExtension(filePath);
+
+            //Construct message
+            message = $"<color={"#f01b98"}>{className}.{memberName} (Line {lineNumber}): {message}</color>";
+
+            //Display message
             //ReSharper disable once Unity.PerformanceCriticalCodeInvocation
-            UnityEngine.Debug.LogError("<color=red>" + message + "</color>");
+            UnityEngine.Debug.LogError(message);
+            
             //ReSharper disable once Unity.PerformanceCriticalCodeInvocation
             UnityEngine.Debug.Break();
         }
@@ -31,10 +46,17 @@ namespace com.Klazapp.Utility
         [SuppressMessage("ReSharper", "Unity.PerformanceCriticalCodeInvocation")]
         [Conditional("KLAZAPP_ENABLE_LOGS")]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void DebugWarning(string message)
+        public static void DebugWarning(string message, [CallerMemberName] string memberName = "", [CallerFilePath] string filePath = "", [CallerLineNumber] int lineNumber = 0)
         {
+            //Get class name
+            var className = System.IO.Path.GetFileNameWithoutExtension(filePath);
+
+            //Construct message
+            message = $"<color={"#ffb418"}>{className}.{memberName} (Line {lineNumber}): {message}</color>";
+
+            //Display message
             //ReSharper disable once Unity.PerformanceCriticalCodeInvocation
-            UnityEngine.Debug.LogWarning("<color=yellow>" + message + "</color>");
+            UnityEngine.Debug.LogWarning(message);
         }
     }
 }
